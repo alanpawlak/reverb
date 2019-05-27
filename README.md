@@ -2,86 +2,33 @@
 
 The effect of the room acoustics on the sound can be recreated by modelling the room impulse response using digital signal processing. Basing on the content taught in the DSP module (at University of Huddersfield), various books on digital signal processing and findings from the work done by Schroeder (1962) and Moorer (1979), an artificial reverb system has been constructed in MATLAB.
 
-## Getting Started
+## Background
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Schroeder (1962) in his publication on natural-sounding artificial reverberation, motivated by the two main problems of the reverberators available back then – their frequency response and insufficient echo density, suggested two approaches to artificial reverberation. One of them was featuring all-pass filters, which eliminated flutter and coloration.  Second approach involved a combination of four parallel comb filters and two all-pass filters connected in series. Moorer (1979) has continued research on artificial reverberation and made some  improvements to Schroeder comb and all-pass filter reverberation network. The idea behind artificial reverberation is to create a decaying response using comb filters emulating room modes and diffuse it using all-pass filters (Fenton, 2018b). The reverberator in this project employs findings presented by both authors.
 
-### Prerequisites
+### Signal flow
 
-What things you need to install the software and how to install them
+The overall signal flow follows the design proposed by Moorer (1979).
 
-```
-Give examples
-```
+* Tapped delay line - to simulate early reflections.
+* Six parallel comb filters, with single pole IIR, low-pass filter implemented in the feedback loop.
+* Two all-pass filters conected in series.
+* Delay line to shift the late portion, so the last early reflection corresponds in time with the first element of the reverberant tail.
 
-### Installing
+### Specification
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+The main project file is reverb.m MATLAB function. All the additional, functions necessary for the processing are in functions directory. Main project file can be executed simply by calling:
 
 ```
-until finished
+[y,fs] = reverb;
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+This will execute function using the default settings which are following:
+*	RT60: 2 seconds
+*	Early reflections: 
+*	Time of arrival: 4.3 ms, 21.5 ms, 22.5 ms, 26.8 ms, 27 ms, 29.8 ms, 45.8 ms, 48.5 ms, 57.2 ms, 58.7 ms, 59.5 ms, 61.2 ms, 70.7 ms, 70.8 ms, 72.6 ms, 74.1 ms, 75.3 ms, 79.7 ms.
+*	Gain: 0.841, 0.504, 0.491, 0.379, 0.380, 0.346, 0.289, 0.272, 0.192, 0.193, 0.217, 0.181, 0.180, 0.181, 0.176, 0.142, 0.167, 0.134.
+*	Initial comb filter delay: 50 ms.
+*	Cutoff frequency of the low-pass filter implemented in comb filter feedback: 2600 Hz.
+*	Dry/Wet: 100% Wet
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
