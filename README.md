@@ -26,8 +26,8 @@ The main project file is reverb.m MATLAB function. All the additional, functions
 This will execute function using the default settings which are following:
 *	RT60: 2 seconds
 *	Early reflections: 
-*	Time of arrival: 4.3 ms, 21.5 ms, 22.5 ms, 26.8 ms, 27 ms, 29.8 ms, 45.8 ms, 48.5 ms, 57.2 ms, 58.7 ms, 59.5 ms, 61.2 ms, 70.7 ms, 70.8 ms, 72.6 ms, 74.1 ms, 75.3 ms, 79.7 ms.
-*	Gain: 0.841, 0.504, 0.491, 0.379, 0.380, 0.346, 0.289, 0.272, 0.192, 0.193, 0.217, 0.181, 0.180, 0.181, 0.176, 0.142, 0.167, 0.134.
+**	Time of arrival: 4.3 ms, 21.5 ms, 22.5 ms, 26.8 ms, 27 ms, 29.8 ms, 45.8 ms, 48.5 ms, 57.2 ms, 58.7 ms, 59.5 ms, 61.2 ms, 70.7 ms, 70.8 ms, 72.6 ms, 74.1 ms, 75.3 ms, 79.7 ms.
+**	Gain: 0.841, 0.504, 0.491, 0.379, 0.380, 0.346, 0.289, 0.272, 0.192, 0.193, 0.217, 0.181, 0.180, 0.181, 0.176, 0.142, 0.167, 0.134.
 *	Initial comb filter delay: 50 ms.
 *	Cutoff frequency of the low-pass filter implemented in comb filter feedback: 2600 Hz.
 *	Dry/Wet: 100% Wet
