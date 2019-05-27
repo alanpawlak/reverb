@@ -32,3 +32,10 @@ This will execute function using the default settings which are following:
 *	Cutoff frequency of the low-pass filter implemented in comb filter feedback: 2600 Hz.
 *	Dry/Wet: 100% Wet
 
+### References 
+
+* Moorer, J. A. (1979). About This Reverberation Business. Computer Music Journal, 3(2), 13.
+* Schroeder, M. R. (1962). Natural Sounding Artificial Reverberation. Journal of the Audio Engineering Society, 10(3), 219–223.
+
+
+
