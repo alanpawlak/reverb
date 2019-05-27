@@ -15,7 +15,7 @@ The overall signal flow follows the design proposed by Moorer (1979).
 * Two all-pass filters conected in series.
 * Delay line to shift the late portion, so the last early reflection corresponds in time with the first element of the reverberant tail.
 
-### Specification
+## Specification
 
 The main project file is reverb.m MATLAB function. All the additional, functions necessary for the processing are in functions directory. Main project file can be executed simply by calling:
 
@@ -32,7 +32,7 @@ This will execute function using the default settings which are following:
 *	Cutoff frequency of the low-pass filter implemented in comb filter feedback: 2600 Hz.
 *	Dry/Wet: 100% Wet
 
-### References 
+## References 
 
 * Moorer, J. A. (1979). About This Reverberation Business. Computer Music Journal, 3(2), 13.
 * Schroeder, M. R. (1962). Natural Sounding Artificial Reverberation. Journal of the Audio Engineering Society, 10(3), 219–223.
